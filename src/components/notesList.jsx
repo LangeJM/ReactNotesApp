@@ -1,25 +1,17 @@
 import React from 'react';
-import NewNote from './newNote'
-
-const mockNotes = [
-    { creationDate: 'Nov 13, 2020, 12:34:05', title: 'OiOiOi', body: 'WaWoiWaWoiWaWoiWaWoiWaWoiWaWoiWaWoi' },
-    { creationDate: 'Nov 13, 2020, 11:04:11', title: 'OiOiOi', body: 'WaWoiWaWoiWaWoiWaWoiWaWoiWaWoiWaWoi' },
-    { creationDate: 'Nov 13, 2020, 1:22:39', title: 'OiOiOi', body: 'WaWoiWaWoiWaWoiWaWoiWaWoiWaWoiWaWoi' }
-];
-
-// Above is mock data to test the App
-
+import NewNote from './note'
 
 function NotesList(props) {
-    return <div>
+    return <div className="d-flex background">
         {props.notes.map(note => 
             <NewNote 
                 key={note.creationDate} 
                 creationDate={note.creationDate}
                 title={note.title}
                 body={note.body}
+                onDeleteNote={(compareCreationDate) => props.onDeleteNote(compareCreationDate)}
             />
-            )}
+        )}
     </div>
 }
 
