@@ -27,7 +27,8 @@ class NoteInput extends React.Component {
     const newNote = {
       creationDate: creationDate,
       title: this.state.title,
-      body: this.state.body
+      body: this.state.body,
+      lastUpdate: ' '
     };
     this.props.onAddNote(newNote);
     this.setState({ title: '', body: '' });
